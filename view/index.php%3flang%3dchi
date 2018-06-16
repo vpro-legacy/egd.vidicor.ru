@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  ﻿﻿﻿﻿﻿﻿<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta content="ru" http-equiv="Content-Language" />
+<meta name="robots" content="all" />
+<meta name="author" content="http://vidicor.ru" />
+<meta name="copyright" content="2012" />
+<link type='image/x-icon' rel="shortcut icon" href="favicon.ico" />
+<link type="text/css"		media="all"		rel="stylesheet"	href="../css/styles.css" />
+<script type="text/javascript"  language='JavaScript' src='http://jquery.vidicor.ru/js/jquery.js'></script>
+ 
+﻿<script language="JavaScript" type="text/javascript">
+
+function menu_platform()
+{ 
+   
+// Ссылки для инсталляции плагинов для разных платформ
+  var Verisign = "安裝插件來查看選定的標準。该插件有一个威瑞信数字签名, 它的安全性是有保證的。";
+  var insPlugVidicor = "<div><a class='menuPlatform' href='http://plugin.vidicor.ru/' title='" + Verisign + "'>安裝的插件Vidicor“</a></div>";
+  var insPlugFlash = "<div><a class='menuPlatform' href='http://get.adobe.com/ru/flashplayer/otherversions/' title='" + Verisign + "'>安裝Adobe插件</a></div>";
+  var insPlugFlashAndroid = "<div><a class='menuPlatform' href='https://play.google.com/store/apps/details?id=com.adobe.flashplayer&feature=search_result#?t=W251bGwsMSwyLDEsImNvbS5hZG9iZS5mbGFzaHBsYXllciJd' title='" + Verisign + "'>the Adobe plugin for Android</a></div>";
+  var insPlugiOS = "iOS :-)";
+//  var titlePre = "Включить просмотр в стандарте ";
+  var titleSuf = ".";
+
+
+  var titleVidicor = "<a class='menuPlatform' href=''>Vidicor Video System</a>";
+  var titleFlashS  = "<a class='menuPlatform' href=''>Adobe Flash &ndash; 1</a>";
+  var titleFlashM  = "<a class='menuPlatform' href=''>Adobe Flash &ndash; 2</a>";
+  var titleHTML5   = "<a class='menuPlatform' href=''>HTML5</a>";
+  
+  var OS = navigator.platform;
+  var multiHi = "<div class='variblview'>多角度, 同步, <br />HD (推薦的).<br /></div>";
+  var single  = "<div class='variblview'>一個視圖 (信號 同 混合机 <br /> 視頻董事).<br /></div>";
+  var multi   = "<div class='variblview'>多角度, <br /> (實驗的)。<br /></div>";
+  var need = "<div class='variblview'>若要查看 必要</div>";
+  var playVidicor     = "";
+  var playFlashSingle = "";
+  var playFlashMulti  = "";
+  var playiPad        = "";
+  var playButton = "img/play_small.jpg";
+  var playButtonVid = "http://engineview.vidicor.ru/pic/mode_vidicor_blue.gif";
+  var playButtonFlash1 = "../../pic/mode_3.gif";
+  var playButtonFlash2 = "../../pic/mode_2.gif";
+  var playButtonHTML5 = "../../pic/mode_html5.gif";
+  
+  var b = "<span><strong>可用此設備<u>&nbsp;(" + OS + ")&nbsp;</u>實時取景模式:</strong></span><br />";
+      b +="<br /><table width='100%' border='0'>";
+
+  if ((OS == "Win32") || (OS == "Win64"))
+  {
+    /*b +="<tr>";
+    b += "<td align='center' width='33%'>" + titleVidicor + "</td>";
+    b += "<td align='center' width='33%'>" + titleFlashS + "</td>";
+    b += "<td align='center' width='33%'>" + titleFlashM + "</td>";
+    b +="</tr>";*/
+				
+    b +="<tr>";
+    b += "<td align='center' width='33%'><a href='"+ playVidicor + "'><img src='" + playButtonVid + "' alt='Vidicor Video System' /></a></td>";
+    b += "<td align='center' width='33%'><a href='" + playFlashSingle + "'><img src='" + playButtonFlash1 + "' alt='Adobe Flash &ndash; 1' /></a></td>";
+    //b += "<td align='center' width='33%'><a href='" + playFlashMulti  + "'><img src='" + playButtonFlash2 + "' alt='Adobe Flash &ndash; 2' /></a></td>";
+    b +="</tr>";
+						
+    b +="<tr>";
+    b += "<td width='33%'>" + multiHi + "</td>";
+    b += "<td width='33%'>" + single + "</td>";
+    //b += "<td width='33%'>" + multi + "</td>";
+    b +="</tr>";
+				
+    b +="<tr>";
+    b += "<td align='center' width='33%'>" + need + insPlugVidicor + "</td>";
+    b += "<td align='center' width='33%'>" + need + insPlugFlash + "</td>";
+    //b += "<td align='center' width='33%'>" + need + insPlugFlash + "</td>";
+    b +="</tr>";				
+  }
+
+  else
+  if (OS == "Linux")
+  { 
+    b +="<tr>";
+    b += "<td align='center' width='100%'>" + titleFlashS + "</td>";
+    b +="</tr>";
+				
+    b +="<tr>";
+    b +="<td align='center' width='100%'><a href='" + playFlashSingle + "'><img src='" + playButtonFlash1 + "' alt='Adobe Flash for Linux' /></a></td>";
+    b +="</tr>";
+				
+    b +="<tr>";
+    b += "<td width='100%'>" + single + "</td>";
+    b +="</tr>";
+				
+    b +="<tr>";
+    b += "<td align='center' width='100%'>" + need + insPlugFlash + "</td>";
+    b +="</tr>"; 
+  }
+
+  else
+  if (OS == "Android")
+  {
+    b +="<tr>";
+    b += "<td align='center' width='100%'>" + titleFlashS + "</td>";
+    b +="</tr>";
+				
+    b +="<tr>";
+    b +="<td align='center' width='100%'><a href='" + playFlashSingle + "'><img src='" + playButtonFlash1 + "' alt='Adobe Flash for Android' /></a></td>";
+    b +="</tr>";
+				
+    b +="<tr>";
+    b += "<td width='100%'>" + single + "</td>";
+    b +="</tr>";
+  }
+
+  else
+  if (OS == "MacOS")
+  {
+    b +="<tr>";
+    b += "<td align='center' width='100%'>" + titleFlashS + "</td>";
+    b +="</tr>";
+				
+    b +="<tr>";
+    b +="<td align='center' width='100%'><a href='" + playFlashSingle + "'><img src='" + playButtonFlash1 + "' alt='Adobe Flash for MacOS' /></a></td>";
+    b +="</tr>";
+				
+    b +="<tr>";
+    b += "<td width='100%'>" + single + "</td>";
+    b +="</tr>";
+				
+    b +="<tr>";
+    b += "<td align='center' width='100%'>" + need + insPlugFlash + "</td>";
+    b +="</tr>";
+  }
+
+  else
+  if (OS == "iPhone" || OS == "iPad")
+  {
+    b +="<tr>";
+    b += "<td align='center' width='100%'>" + titleHTML5 + "</td>";
+    b +="</tr>";
+				
+    b +="<tr>";
+    b +="<td align='center' width='100%'><a href='" + playiPad + "'><img src='" + playButtonFlash1 + "' alt='HTML5' /></a></td>";
+    b +="</tr>";
+				
+    b +="<tr>";
+    b += "<td width='100%'>" + single + "</td>";
+    b +="</tr>";
+  }
+  else
+  if (OS == "Linux armv7l")
+  { 
+    b +="<tr>";
+    b += "<td align='center' width='100%'>" + titleHTML5 + "</td>";
+    b +="</tr>";
+				
+    b +="<tr>";
+    b +="<td align='center' width='100%'><a href='" + playiPad + "'><img src='" + playButtonHTML5 + "' alt='HTML5' /></a></td>";
+    b +="</tr>";
+				
+    b +="<tr>";
+    b += "<td width='100%'>" + single + "</td>";
+    b +="</tr>";
+  }
+
+  else
+  {
+    b +="<tr>";
+    b += "<td align='center' width='100%'>" + titleFlashS + "</td>";
+    b +="</tr>";
+				
+    b +="<tr>";
+    b +="<td align='center' width='100%'><a href='" + playFlashSingle + "'><img src='" + playButtonFlash1 + "' alt='Adobe Flash for Android' /></a></td>";
+    b +="</tr>";
+				
+    b +="<tr>";
+    b += "<td width='100%'>" + single + "</td>";
+    b +="</tr>";
+  };
+
+  b += "</tr></table>"; 
+// alert(b);
+  document.write(b);
+}
+
+
+  function flashit() // мигание текста
+  {
+  if (!document.all) return;
+  var el = document.getElementById("blinktxt");
+  if (el)
+  {
+   if (el.style.color=="yellow") {el.style.color="white"; el.style.size="20"}
+    else {el.style.color="yellow"; el.style.size="10px"}
+   }
+  }
+
+  setInterval("flashit()", 500)
+
+</script> 
+
+<link  type="text/css"   rel="stylesheet"  href="http://jquery.vidicor.ru/css/smoothness/jquery-ui.custom.min.css" />
+
+<script type="text/javascript"  language='JavaScript' src='http://jquery.vidicor.ru/js/jquery.js'></script>
+<script type="text/javascript" language='JavaScript'  src='http://jquery.vidicor.ru/js/jquery-ui.min.js'></script>  <title></title>
+</head>
+
+<body>
+  <div id="contain">
+    <div id="header">
+      ﻿<!--НАЧАЛО: Шапка сайта --> 
+<table width="900px" border="0">
+  <tr>
+      <td valign="middle" width="" style="display:inline-table;">
+      <a href="http://www.egd.ru/" target="_blank"><img src="/pic/egd_logo.png" alt="http://www.egd.ru/" width="130px" height="125px" border="0" class="img_sign" /></a> <!--Логотип-->
+    </td>
+    <td align="left" valign="middle" width="" style="display:inline-table; ">
+      <a class="title_h" href="http://www.egd.ru/" target="_blank"><img src="/pic/ekb_logo.png" alt="ekb_logo.png" width="250px" height="60px" border="0" class="img_sign" /></a>	<!--Наименование организации-->	
+    </td>
+      <td valign="middle" width="" style="display:none;">
+      <a href="http://www.sgdf.ru/" target="_blank"><img src="/pic/ekb_logo.png" alt="http://www.sgdf.ru/" width="130px" height="125px" border="0" class="img_sign" /></a> <!--Логотип-->
+    </td>
+    <td align="left" valign="middle" width="" style="display:none; ">
+      <a class="title_h" href="http://www.sgdf.ru/" target="_blank"><img src="/pic/ekbmess.png" alt="ekbmess.png" width="250px" height="60px" border="0" class="img_sign" /></a>	<!--Наименование организации-->	
+    </td>
+      <td valign="middle" align="center">
+      	  <a href="?lang=rus"><img src="/Lang/img/rus_Flag.gif" alt="rus" title="俄 -- Русский" width="27" height="15" border="0" /></a>&nbsp;
+      	  <a href="?lang=eng"><img src="/Lang/img/eng_Flag.gif" alt="eng" title="英语 -- English" width="27" height="15" border="0" /></a>&nbsp;
+      	  <a href="?lang=chi"><img src="/Lang/img/chi_Flag.gif" alt="chi" title="中国" width="27" height="15" border="0" /></a>&nbsp;
+        
+    </td>
+    <td valign="middle" align="right" width="25px">
+      <a class="cursorlink" href="/admin/index.php"><img src="/pic/opt.gif" title="管理员" width="24" height="24" border="0" alt="" /></a> <!--Администрирование-->
+    </td>
+  </tr>
+</table>
+<!--КОНЕЦ: Шапка сайта --> 
+    </div>
+    <div id="content">
+      <center>
+               <!--Таблица ссылок залов--> 
+        <table border="0" cellpadding="0" cellspacing="0">  
+          <tr>
+           <td align='center' valign='middle' width='300px' >
+                        
+                      </td>          </tr>
+          <tr>
+            <td colspan="3" bgcolor="#eeeeee">&nbsp;</td>
+          </tr>
+        </table>
+      <!--Конец Таблица ссылок залов-->
+      </center>
+      <div id="rbtop"></div>	<!--картинка верхней линии, прописана в styles.css -->
+      <div id="rb">		<!--картинка боковых линий, прописана в styles.css-->
+        <div>
+          <script language="javascript" charset="UTF-8" width="900px">
+            menu_platform();	//функция menu_platform() в файле MenuPlatform.php; выбор форматов
+          </script>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <div id="rbbot"></div>	<!--картинка нижней линии, прописана в styles.css -->
+      <br />
+      <!--Таблица ближайшая трансляция, сейчас в прямом эфире, ближайшая трансляция-->
+      <table cellspacing="0" class="table2">
+        <tr>
+          <td width="300px">
+            <h4>最后转播:</h4>
+          </td>
+          <td width="300px">
+            <h1>直播:</h1>
+          </td>
+          <td width="300px">
+            <h4>最近转播:</h4>
+          </td>
+        </tr>  
+        <tr>
+          <td class="graybg">
+            <div class = 'nameHall'></div><div class = 'dateHall'>, </div><div class = 'descrHall'></div>
+          </td>
+          <td width="320px" valign="top" class="graybg">
+             <IFRAME SRC="http://rt2.vidicor.ru:9999/?vidicor-test-shot-2" height="180" width="320"></IFRAME>
+            <br />
+            <!--Проверка скорости интернет-канала-->
+            <div id="speed"><a href="http://bravica.net/ru/" target="_blank">检测因特网速度</a></div>
+          </td>
+          <td class="graybg">
+            目前，沒有預定的事件！          </td>
+        </tr>
+      </table>
+      <!--Конец Таблица ближайшая трансляция, сейчас в прямом эфире, ближайшая трансляция-->
+    </div> 
+
+    <!--Ссылка На главную-->
+    <div align="center">
+      <a href="/">主页</a>
+    </div>
+    <br />
+    
+    <!--Подключение подвала сайта-->
+    <div id="footer">
+      ﻿<!--НАЧАЛО: "Подвал" сайта-->
+<center>
+<table width="900px" border="0">
+  <tr>
+    <td align="left" valign="middle" width="100%">
+      &copy; 2005-2015&laquo;Vidicor Ltd.&raquo;</a>. 在线视频系统 &laquo;Vidicor Video System&raquo;.<br />
+                       Email: <a href='vpro@vidicor.ru'>vpro@vidicor.ru</a>. Phone: +7 (800) 1000-314<br /><br /> <!--Данные ООО «НПЦ "Видикор"»-->
+    </td>
+    <td align="center" valign="middle">
+      <a href="http://vidicor.ru/" target="_blank"><img src="http://vidicor.ru/Logotypes/logo_vidicor_Russia.png" alt="" height="82px" border="0" /></a>
+    </td>
+  </tr>
+</table>
+<br />
+</center>
+<!--КОНЕЦ: "Подвал" сайта-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+
+</body>
+</html>
